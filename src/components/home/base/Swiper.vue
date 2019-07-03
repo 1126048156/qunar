@@ -67,8 +67,8 @@
   .swiper >>> .swiper-pagination-bullet-active
     background-color:#fff
   .swiper
-    height:2.18rem
+    display:flex
     img
-      height:2.18rem
+      width:100%
 
 </style>
