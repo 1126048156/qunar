@@ -1,10 +1,14 @@
 <template>
     <div class="home">
       <home-header></home-header>
-      <home-swiper :swiperList="swiperList"></home-swiper>
-      <home-nav :iconList="iconList"></home-nav>
-      <home-favourite :recommendList="recommendList"></home-favourite>
-      <home-weekend></home-weekend>
+      <div ref="wrapper" class="content">
+        <div>
+          <home-swiper :swiperList="swiperList"></home-swiper>
+          <home-nav :iconList="iconList"></home-nav>
+          <home-favourite :recommendList="recommendList"></home-favourite>
+          <home-weekend :weekendList="weekendList"></home-weekend>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -16,6 +20,7 @@
   import HomeNav from './base/Nav'
   import HomeFavourite from './base/Favourite'
   import HomeWeekend from './base/Weekend'
+  import BScroll from 'better-scroll'
     export default {
         name: "Home",
         data() {
@@ -26,6 +31,11 @@
               weekendList:[]
             }
         },
+      mounted(){
+          this.scroll = new BScroll(this.$refs.wrapper,{
+            click:true
+          })
+      },
       components:{
         HomeHeader,
         HomeSwiper,
@@ -48,6 +58,12 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="stylus" scoped>
+.content
+  position:fixed
+  overflow:hidden
+  top:.88rem
+  bottom:0
+  right:0
+  left:0
 </style>

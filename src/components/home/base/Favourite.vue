@@ -5,7 +5,7 @@
         猜你喜欢
       </h3>
       <ul>
-        <li class="item" v-for="(recommend,index)  in recommendList" :key="index">
+        <router-link class="item" v-for="(recommend,index)  in recommendList" :key="index" tag="li" :to="{name:'detaillink',params:{id:recommend.id}}">
           <img class="item-img" :src="recommend.imgUrl" alt="">
           <div class="item-info">
             <h4>{{recommend.title}}</h4>
@@ -33,7 +33,7 @@
               </div>
             </div>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
 </template>

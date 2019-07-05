@@ -1,6 +1,6 @@
 <template>
     <div class="swiper">
-      <swiper :options="swiperOption">
+      <swiper :options="swiperOption"  v-if="isShow">
         <!-- slides -->
         <swiper-slide v-for="(img,index) in swiperList" :key="index">
           <img :src="img.imgUrl" alt="">
@@ -28,10 +28,14 @@
           pagination: {
             el: '.swiper-pagination',
           }
-        }
+        },
       }
     },
-
+    computed:{
+      isShow(){
+        return this.swiperList.length>0;
+      }
+    }
   }
 </script>
 

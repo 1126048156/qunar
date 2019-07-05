@@ -5,9 +5,9 @@
         <i class="iconfont icon-sousuo"></i>
         <input type="text" placeholder="输入城市/景点/游玩主题">
       </div>
-      <div class="header-right">
-        <span>武汉</span><i class="iconfont icon-jiantou"></i>
-      </div>
+      <router-link class="header-right" tag="div" to="/city">
+        <span>{{$store.state.city}}</span><i class="iconfont icon-jiantou"></i>
+      </router-link>
     </div>
 </template>
 

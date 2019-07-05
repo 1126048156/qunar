@@ -10,6 +10,7 @@ import 'style/iconfont.css'
 import 'style/border.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import axios from 'axios'
+import store from './store'
 
 // require styles
 import 'swiper/dist/css/swiper.css'
@@ -23,5 +24,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store
 })
