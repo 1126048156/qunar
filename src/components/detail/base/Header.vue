@@ -38,8 +38,11 @@
         }
       },
       activated() {
-          console.log(22332)
+          //当组件展示的时候被触发
           window.addEventListener('scroll',this.handleScroll)
+      },
+      deactivated() {
+          window.removeEventListener('scroll',this.handleScroll)
       }
     }
 </script>

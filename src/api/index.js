@@ -17,3 +17,7 @@ export let getDetail = (id)=>{
   return axios.get('/static/mock/detail/'+ id + '.json')
 }
 
+export let getWeek = (id)=>{
+  return axios.get('/static/mock/week/'+ id + '.json')
+}
+

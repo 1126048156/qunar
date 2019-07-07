@@ -2,13 +2,13 @@
     <div class="weekend">
       <h3 class="title">周末去哪儿</h3>
       <ul>
-        <li class="item border-bottom" v-for="(item,index) in weekendList" :key="index">
+        <router-link tag="li" :to="{name:'weeklink',params:{id:item.id}}" class="item border-bottom" v-for="(item,index) in weekendList" :key="index">
           <img :src="item.imgUrl" alt="" class="item-img">
           <div class="item-info">
             <h4>{{item.title}}</h4>
             <p>{{item.desc}}</p>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
 </template>

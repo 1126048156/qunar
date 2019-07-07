@@ -44,7 +44,7 @@
         HomeWeekend
       },
       created() {
-        this.getData();
+       // this.getData();
       },
       methods:{
           async getData(){
@@ -54,6 +54,9 @@
             this.swiperList = swiperList;
             this.weekendList =weekendList;
           }
+      },
+      activated() {
+        this.getData();
       }
     }
 </script>

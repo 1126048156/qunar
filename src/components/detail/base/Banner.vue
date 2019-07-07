@@ -8,12 +8,15 @@
           <span>{{gallaryImgs.length}}</span>
         </p>
       </div>
-      <common-gallary :gallaryImgs="gallaryImgs" v-if="isShow"@close="close"></common-gallary>
+      <fade-animation>
+        <common-gallary :gallaryImgs="gallaryImgs" v-if="isShow"@close="close"></common-gallary>
+      </fade-animation>
     </div>
 </template>
 
 <script>
   import CommonGallary from '@/common/Gallary'
+  import FadeAnimation from '@/common/FadeAnimation'
     export default {
         name: "DeatilBanner",
         data() {
@@ -23,7 +26,8 @@
         },
       props:['bannerImg','sightName','gallaryImgs'],
       components:{
-          CommonGallary
+        FadeAnimation,
+          CommonGallary,
       },
       methods:{
           close(value){
